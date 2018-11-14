@@ -24,4 +24,11 @@ class CalculatorTest {
         List<Integer> result = calculator.run("input.txt");
         Assertions.assertEquals(List.of(20, 22), result);
     }
+
+    @Test
+    void testCalculatorWithInvalidInputFile() {
+        Calculator calculator = new Calculator();
+        IllegalStateException e = Assertions.assertThrows(IllegalStateException.class, () -> calculator.run("inputs.txt"));
+        Assertions.assertEquals("Reading provided input has failed.", e.getMessage());
+    }
 }
