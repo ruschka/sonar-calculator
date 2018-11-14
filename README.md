@@ -1,0 +1,2 @@
+# sonar-calculator
+Simple calculator.
