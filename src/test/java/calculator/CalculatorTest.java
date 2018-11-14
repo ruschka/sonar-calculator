@@ -17,4 +17,11 @@ class CalculatorTest {
         List<Integer> result = calculator.run(inputs);
         Assertions.assertEquals(List.of(20, 22), result);
     }
+
+    @Test
+    void testCalculatorWithInputFile() {
+        Calculator calculator = new Calculator();
+        List<Integer> result = calculator.run("input.txt");
+        Assertions.assertEquals(List.of(20, 22), result);
+    }
 }

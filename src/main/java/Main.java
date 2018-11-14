@@ -7,10 +7,11 @@ import java.util.List;
  * @author Vojtech Ruschka
  */
 public class Main {
-    private static final List<String> INPUTS = Arrays.asList("ADD 5", "SUBTRACT 1", "DIVIDE BY 2", "MULTIPLY BY 10", "SAVE", "ADD 2", "SAVE");
-
     public static void main(String[] args) {
+        if (args.length != 1) {
+            throw new IllegalStateException("File path is missing.");
+        }
         Calculator calculator = new Calculator();
-        System.out.println(calculator.run(INPUTS));
+        System.out.println(calculator.run(args[0]));
     }
 }
